@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+scikit-learn
+nltk
+pydantic
+python-multipart
+Jinja2
+pandas

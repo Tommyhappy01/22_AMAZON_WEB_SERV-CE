@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>MACHINE LEARNING API (TOMMY)</title>
+</head>
+
+<body>
+
+  <h1>J.SOCIETY ADVERTS PREDICT MODEL</h1>
+  <form action="{{ url_for('predict')}}"method="post">
+    
+    <label for="TV">How much you wanna spend for tv advertising?</label><br>
+    <input type="number" name="TV" placeholder="tv price" required="required" /><br>
+
+    <label for="radio">Your budget for radio advertising?</label><br>
+    <input type="number" name="radio" placeholder="radio price" required="required" /><br>
+
+    <label for="newspaper">Really!! Still paying for newspaper advetising?</label><br>
+    <input type="number" name="newspaper" placeholder="newspaper price" required="required" /><br>
+
+    <input type="submit" value="predict">
+  
+  </form>
+
+  <br>
+  <br>
+  {{ prediction_text }}
+
+</body>
+</html>

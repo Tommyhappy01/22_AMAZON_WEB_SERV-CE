@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P R E D I C T I O N </title>
+</head>
+<body>
+<h1>Welcome to my prediction page</h1>
+    <form action="#" method="post" style="padding-left: 20%;">
+        <label for="TV">"tv advertising"</label><br>
+        <input type="number" name="TV" value=230><br>
+
+        <label for="radio">radio advertising</label><br>
+        <input type="number" name="radio" value=50><br>
+
+        <label for="newspaper">newspaper advetising</label><br>
+        <input type="number" name="newspaper" value=50><br>
+
+        <input type="submit" value="predict">
+    </form>
+            {% if result%}
+         <p style="background-color: green;">{{result}}</p>
+            {%endif%}
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOSCOUT MODEL DEPLOYMENT</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 style="font-size:32px">AUTOSCOUT CAR PRICE ANALYSIS WITH LASSO MODEL</h2>
+            <h3 style="font-size:30px">AGE</h3><input id="first" name="age" type="agenum" required="required" placeholder = "How old is your car?"><br>
+            <h3 style="font-size:30px">KILOMETERS</h3><input id="second" name="km" type="kmnum" required="required" placeholder = "Mileage of your car?"><br>
+            <h3 style="font-size:30px">HORSE POWER - KILOWATT</h3><input id="hp_kw" name="hp_kw" required="required" placeholder = "How many hp/kw does your car have?"><br>
+            <h3 style="font-size:30px">MAKE - MODEL</h3><select name="make_model" id="make_model" required="required" placeholder = "What is maker/model name of your car?">
+                <option value="Audi_A1">Audi_A1</option>
+                <option value="Audi_A3">Audi_A3</option>
+                <option value="Opel_Astra">Opel_Astra</option>
+                <option value="Opel_Corsa">Opel_Corsa</option>
+                <option value="Opel_Insignia">Opel_Insignia</option>
+                <option value="Renault_Clio">Renault_Clio</option>
+                <option value="Renault_Duster">Renault_Duster</option>
+                <option value="Renault_Espace">Renault_Espace</option>
+            </select><br>
+            <h3 style="font-size:30px">GEARING TYPE</h3><select name="gearing_type" id="gearing_type" required="What type of transmission is your car has?">
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+                <option value="Semi_Automatic">Semi_Automatic</option>
+            </select><br><br><br>
+
+            <button id="sub" type="submit ">CALCULATE</button>
+            <br>
+
+        </form>
+
+        <br><br><h3 style="font-size:30px">{{ prediction_text }}<h3>
+
+    </div>
+
+    <style>
+
+        input[type='agenum'] { font-size: 23px; text-align: center;}
+        input[type='kmnum'] { font-size: 23px; text-align: center;}
+
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        
+        #hp_kw {
+            width: 500px;
+            border-radius: 14px;
+            height: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #make_model {
+            width: 500px;
+            height: 30px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #make_model:hover {
+            background-color: coral;
+        }
+        
+        #gearing_type {
+            width: 200px;
+            height: 25px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #gearing_type:hover {
+            background-color: coral;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+    </style>
+</body>
+
+</html>
